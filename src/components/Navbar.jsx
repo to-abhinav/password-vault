@@ -8,7 +8,7 @@ import { Plus, LogOut, User } from "lucide-react";
 import { ThemeToggleButton } from "@/components/ThemeToggleButton";
 import { useTheme } from "next-themes";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useSession,signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 import {
   DropdownMenu,
@@ -21,7 +21,7 @@ import {
 
 function Navbar({ isAuthenticated, userAvatar }) {
   const theme = useTheme();
-  const { data: session } = useSession()
+  const { data: session } = useSession();
   const [showAddEditNoteDialog, setShowAddEditNoteDialog] =
     React.useState(false);
   return (
@@ -41,6 +41,7 @@ function Navbar({ isAuthenticated, userAvatar }) {
                   className="border border-purple-700 text-purple-700 bg-white hover:text-white 
           hover:bg-purple-700 shadow-lg hover:shadow-xl font-semibold px-6 py-3 
           rounded-md transition duration-300 mx-2"
+                  href="/login"
                 >
                   Login
                 </Button>
@@ -48,6 +49,7 @@ function Navbar({ isAuthenticated, userAvatar }) {
                   className="bg-purple-700 text-white hover:bg-purple-600 shadow-lg 
           hover:shadow-xl font-semibold px-6 py-3 rounded-md transition 
           duration-300 mx-2"
+                  herf="/signup"
                 >
                   Signup
                 </Button>
